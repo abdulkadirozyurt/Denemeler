@@ -209,24 +209,35 @@ namespace ConsoleApp2
 
             Random rnd = new Random();
 
-            int[] rastgeleSayilar = new int[10];
+            int[] rastgeleSayilar = new int[100];
 
-            Console.WriteLine("{0} \t {1} \t {2}", "İndis", "Değer", "Kaç yerde Geçtiği");
+            //Console.WriteLine("{0} \t {1} \t {2}", "İndis", "Değer", "Kaç yerde Geçtiği");
+
 
             for (int i = 0; i < rastgeleSayilar.Length; i++)
             {
-                rastgeleSayilar[i] = rnd.Next(5);
+                rastgeleSayilar[i] = rnd.Next(1, 11);
+            }
+            
 
+            int [] adet=new int[10];
 
-                Console.WriteLine("{0} \t {1}", i, rastgeleSayilar[i]);
-
-
+            for (int i = 0; i < rastgeleSayilar.Length; i++)
+            {
+                adet[rastgeleSayilar[i] - 1]++;
             }
 
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write("{0}  Adet {1} \t -->",adet[i],i+1);
 
-
-
-
+                for (int j = 0; j < adet[i]; j++)
+                {
+                    Console.Write("*");
+                }
+                
+                Console.WriteLine();
+            }
 
 
 
